@@ -7,7 +7,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://spendwise-backend-u4nz.onrender.com', formData);
+            await axios.post('https://spendwise-backend-u4nz.onrender.com/api/auth/signup', formData);
             alert("Signup Successful! 🎉 Ab aap Login kar sakte hain.");
         } catch (err) {
             alert(err.response?.data?.message || "Signup Failed ❌");

@@ -8,7 +8,7 @@ const Login = ({ onLoginSuccess }) => {
         e.preventDefault();
         try {
             // 1. Backend ko request bhejein
-            const res = await axios.post('https://spendwise-backend-u4nz.onrender.com', formData);
+            const res = await axios.post('https://spendwise-backend-u4nz.onrender.com/api/auth/login', formData);
             
             // 2. Agar status 200 hai (Success)
             if (res.status === 200) {
