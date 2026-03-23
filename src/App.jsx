@@ -54,7 +54,7 @@ function App() {
     };
 
     try {
-      const res = await axios.post('http://localhost:5000/api/transaction/add', newTransaction, {
+      const res = await axios.post('https://spendwise-backend-u4nz.onrender.com', newTransaction, {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Database se aayi nayi transaction ko list mein add karein
@@ -69,7 +69,7 @@ function App() {
     const token = localStorage.getItem('token');
     try {
       // URL ko dhyan se check karein (backticks ke andar)
-      await axios.delete(`http://localhost:5000/api/transaction/${id}`, {
+      await axios.delete(`https://spendwise-backend-u4nz.onrender.com/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
