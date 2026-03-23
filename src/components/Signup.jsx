@@ -7,7 +7,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/auth/signup', formData);
+            await axios.post('https://spendwise-backend-u4nz.onrender.com', formData);
             alert("Signup Successful! 🎉 Ab aap Login kar sakte hain.");
         } catch (err) {
             alert(err.response?.data?.message || "Signup Failed ❌");
