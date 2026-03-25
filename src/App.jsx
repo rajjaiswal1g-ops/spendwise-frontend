@@ -58,7 +58,7 @@ function App() {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Database se aayi nayi transaction ko list mein add karein
-      setTransactions([res.data, ...transactions]);
+      setTransactions(([res.data, ...transactions]));
       setName(''); setAmount(''); setShowForm(false);
     } catch (err) {
       alert("Failed to save transaction ❌");
