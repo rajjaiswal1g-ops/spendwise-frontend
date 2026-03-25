@@ -13,6 +13,7 @@ const Login = ({ onLoginSuccess }) => {
             // 2. Agar status 200 hai (Success)
             if (res.status === 200) {
                 localStorage.setItem('userName', res.data.user.name);
+                localStorage.setItem('token', res.data.teken);
                 alert("Login Successful! 🎉");
                 onLoginSuccess(); // Dashboard dikhane ke liye
             }
