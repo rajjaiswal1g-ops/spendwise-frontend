@@ -28,9 +28,10 @@ function App() {
         const token = localStorage.getItem('token');
         if (!token) return;
 
-        const res = await axios.get('https://spendwise-backend-u4nz.onrender.com', {
+        const res = await axios.get('https://spendwise-backend-u4nz.onrender.com/api/transactions/all', {
           headers: { Authorization: `Bearer ${token}` }
         });
+        setTransactions(Array.isArray(res.data) ? res.data : []);
         setTransactions(res.data);
       } catch (err) {
         console.error("Error fetching transactions:", err);
