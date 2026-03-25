@@ -45,16 +45,16 @@ function App() {
 
     const token = localStorage.getItem('token');
     const newTransaction = {
-      name,
+      name: name,
       amount: parseInt(amount),
-      category,
-      type,
-      date: new Date().toLocaleDateString(),
+      category: category,
+      type: type,
+      date: new Date(),
       emoji: type === 'income' ? "💰" : "💸"
     };
 
     try {
-      const res = await axios.post('https://spendwise-backend-u4nz.onrender.com', newTransaction, {
+      const res = await axios.post('https://spendwise-backend-u4nz.onrender.com/api/transactions/add', newTransaction, {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Database se aayi nayi transaction ko list mein add karein
@@ -69,7 +69,7 @@ function App() {
     const token = localStorage.getItem('token');
     try {
       // URL ko dhyan se check karein (backticks ke andar)
-      await axios.delete(`https://spendwise-backend-u4nz.onrender.com/${id}`, {
+      await axios.delete(`https://spendwise-backend-u4nz.onrender.com/api/transactions/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
